@@ -3,7 +3,7 @@ module RandomData
   # Methods to create Brazilian CPF number
   module Papers
 
-    def CPF
+    def cpf
       numbers = Array.new(9) {rand(9)} 
       digits = Array.new(2) {Array.new}
 
