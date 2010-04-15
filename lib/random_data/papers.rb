@@ -2,31 +2,26 @@ module RandomData
 
   # Methods to create Brazilian CPF number
   module Papers
-
     def cpf
-      numbers = Array.new(9) {rand(9)} 
-      digits = Array.new(2) {Array.new}
-
-      for i in 2..10  do  
-        digits.first <<  numbers.reverse[i-2] * i 
-      end 
-
-      digits[0] = digits.first.inject {|sum,x| sum +x} 
-      digits[0] = 11 - (digits.first % 11) 
-      digits[0] = 0 if digits.first >= 10
-
-      for i in 3..10  do  
-        digits.last <<  numbers.reverse[i-3] * i 
-      end 
-
-      digits[1] =  digits.last.inject {|sum,x| sum +x} 
-      digits[1] += digits.first * 2 
-      digits[1] = 11 - (digits.last % 11) 
-      digits[1] = 0 if digits.last >= 10
-
-      numbers += digits
-
+      numbers = Array.new(9) {rand(10)} 
+      2.times do
+        start = 2 
+        digit = 0
+        for i in start..numbers.size  do  
+          digit +=  numbers.reverse[i-start] * i 
+        end 
+        digit = 11 - (digit % 11) 
+        digit = 0 if digit >= 10
+        
+        start += 1
+        numbers << digit
+      end
       numbers.join
+    end
+
+    def formated_cpf
+      cpf = self.cpf
+      "#{cpf[0..2]}.#{cpf[3..5]}.#{cpf[6..8]}-#{cpf[9..10]}"
     end
   end
 end
