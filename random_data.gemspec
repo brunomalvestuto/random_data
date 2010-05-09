@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "lib/random_data/grammar.rb",
      "lib/random_data/locations.rb",
      "lib/random_data/markov.rb",
+     "lib/random_data/papers.rb",
      "lib/random_data/names.rb",
      "lib/random_data/numbers.rb",
      "lib/random_data/text.rb",
