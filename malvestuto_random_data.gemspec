@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{malvestuto_random_data}
-  s.version = "1.5.1"
+  s.version = "1.5.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Subelsky", "Bruno Malvestuto"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "lib/random_data/booleans.rb",
      "lib/random_data/contact_info.rb",
      "lib/random_data/dates.rb",
+     "lib/random_data/uri.rb",
      "lib/random_data/grammar.rb",
      "lib/random_data/locations.rb",
      "lib/random_data/markov.rb",

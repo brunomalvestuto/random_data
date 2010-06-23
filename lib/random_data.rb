@@ -9,6 +9,7 @@ require "#{dir}/names"
 require "#{dir}/numbers"
 require "#{dir}/text"
 require "#{dir}/papers"
+require "#{dir}/uri"
 require "#{dir}/markov"
 require "#{dir}/grammar"
 require "#{dir}/version"
@@ -23,6 +24,7 @@ class Random
   extend RandomData::Numbers
   extend RandomData::Text
   extend RandomData::Papers
+  extend RandomData::URI
 
   # Looks for a file in the load path with the name methodname.dat, reads the lines from that file, then gives you a random line from that file.
   # Raises an error if it can't find the file.  For example, given a file named "horse.dat" in your load path:
